@@ -13,7 +13,7 @@ const uint8_t kMatrixWidth = 160;
 const uint8_t kMatrixHeight = 8;
 
 #define NUM_LEDS (kMatrixWidth * kMatrixHeight)
-#define PIN_LEDS 27
+#define PIN_LEDS 13
 
 const bool    kMatrixSerpentineLayout = true;
 String Message = "Great Projects wish you a very nice day.";
@@ -26,7 +26,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println("resetting!");
   delay(3000);
-  FastLED.addLeds<WS2812B,27,RGB>(leds,NUM_LEDS);
+  FastLED.addLeds<WS2812B,PIN_LEDS,RGB>(leds,NUM_LEDS);
   FastLED.setBrightness(160);
   effects.setFont(GPFont8x8); 
 }
